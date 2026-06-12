@@ -21,7 +21,7 @@
       :root {
         --paper: #fff9ec;
         --page: #fff2db;
-        --page-deep: #ffe6bf;
+        --page-deep: #ffe7c3;
         --ink: #211b14;
         --ink-soft: rgba(33, 27, 20, 0.72);
         --ink-faint: rgba(33, 27, 20, 0.48);
@@ -54,7 +54,7 @@
         color: var(--ink);
         background:
           radial-gradient(circle at 18% 0%, rgba(225, 100, 17, 0.13), transparent 28rem),
-          linear-gradient(180deg, var(--paper) 0%, var(--page) 44%, var(--page-deep) 100%);
+          linear-gradient(180deg, var(--paper) 0%, var(--page) 46%, var(--page-deep) 100%);
         font-family: var(--body);
         letter-spacing: 0;
       }
@@ -65,12 +65,12 @@
         z-index: -1;
         pointer-events: none;
         content: "";
-        opacity: 0.18;
+        opacity: 0.16;
         background-image:
           linear-gradient(rgba(75, 46, 23, 0.05) 1px, transparent 1px),
           linear-gradient(90deg, rgba(75, 46, 23, 0.04) 1px, transparent 1px);
         background-size: 44px 44px;
-        mask-image: linear-gradient(180deg, black, transparent 70%);
+        mask-image: linear-gradient(180deg, black, transparent 72%);
       }
 
       a {
@@ -80,6 +80,10 @@
       button,
       input {
         font: inherit;
+      }
+
+      button {
+        -webkit-tap-highlight-color: transparent;
       }
 
       .visually-hidden {
@@ -150,29 +154,55 @@
         text-transform: uppercase;
       }
 
+      .meta-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 27px;
+        padding: 0 10px;
+        color: var(--brown);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 242, 219, 0.65);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+      }
+
+      .chip[data-tier="core"] {
+        color: var(--paper);
+        border-color: transparent;
+        background: var(--accent);
+      }
+
       .hero-copy {
         display: grid;
-        grid-template-columns: minmax(0, 0.86fr) minmax(260px, 0.42fr);
+        grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.48fr);
         align-items: end;
         gap: clamp(24px, 5vw, 82px);
-        padding: clamp(34px, 7vw, 88px) 0 clamp(24px, 4vw, 48px);
+        padding: clamp(34px, 7vw, 84px) 0 clamp(24px, 4vw, 46px);
       }
 
       h1 {
         max-width: 940px;
         margin: 0;
         font-family: var(--display);
-        font-size: clamp(3.3rem, 10vw, 8.6rem);
+        font-size: clamp(3.2rem, 9vw, 8rem);
         font-weight: 400;
-        line-height: 0.83;
+        line-height: 0.85;
         text-wrap: balance;
       }
 
       .hero-copy p {
-        max-width: 470px;
+        max-width: 500px;
         margin: 0 0 10px;
         color: var(--ink-soft);
-        font-size: clamp(1rem, 1.5vw, 1.28rem);
+        font-size: clamp(1rem, 1.5vw, 1.24rem);
         line-height: 1.38;
       }
 
@@ -220,7 +250,7 @@
         top: 0;
         z-index: 20;
         padding: 10px 0 16px;
-        background: linear-gradient(180deg, rgba(255, 249, 236, 0.96), rgba(255, 242, 219, 0.88));
+        background: linear-gradient(180deg, rgba(255, 249, 236, 0.97), rgba(255, 242, 219, 0.9));
         border-top: 1px solid rgba(81, 56, 26, 0.08);
         border-bottom: 1px solid rgba(81, 56, 26, 0.12);
         backdrop-filter: blur(18px);
@@ -228,7 +258,7 @@
 
       .controls {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) auto minmax(190px, 260px);
+        grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
         gap: 12px;
         align-items: center;
       }
@@ -249,10 +279,6 @@
 
       .segmented::-webkit-scrollbar {
         display: none;
-      }
-
-      .segmented[data-compact] {
-        justify-self: end;
       }
 
       .tab {
@@ -296,10 +322,28 @@
         box-shadow: 0 0 0 4px rgba(225, 100, 17, 0.1);
       }
 
+      .active-pack {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px 16px;
+        padding-top: 14px;
+        color: var(--ink-soft);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        text-transform: uppercase;
+      }
+
+      .active-pack strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
       .quick-nav {
         display: flex;
         gap: 8px;
-        padding: 18px 0 4px;
+        padding: 14px 0 2px;
         overflow-x: auto;
         mask-image: linear-gradient(90deg, black 0, black calc(100% - 54px), transparent 100%);
         scrollbar-width: none;
@@ -349,7 +393,7 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         background:
-          linear-gradient(180deg, rgba(255, 253, 246, 0.88), rgba(255, 249, 236, 0.74)),
+          linear-gradient(180deg, rgba(255, 253, 246, 0.9), rgba(255, 249, 236, 0.76)),
           var(--paper);
         box-shadow: var(--shadow);
       }
@@ -368,7 +412,7 @@
         grid-template-columns: minmax(0, 1fr) auto;
         gap: 18px;
         align-items: start;
-        margin-bottom: clamp(18px, 3vw, 26px);
+        margin-bottom: clamp(16px, 2.5vw, 24px);
       }
 
       .preset-title {
@@ -386,35 +430,8 @@
         line-height: 0.92;
       }
 
-      .meta-line {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 13px;
-      }
-
-      .chip {
-        display: inline-flex;
-        align-items: center;
-        min-height: 27px;
-        padding: 0 10px;
-        color: var(--brown);
-        border: 1px solid var(--line);
-        border-radius: 999px;
-        background: rgba(255, 242, 219, 0.65);
-        font-family: var(--mono);
-        font-size: 0.66rem;
-        text-transform: uppercase;
-      }
-
-      .chip[data-tier="core"] {
-        color: var(--paper);
-        border-color: transparent;
-        background: var(--accent);
-      }
-
       .preset-desc {
-        max-width: 660px;
+        max-width: 720px;
         margin: 13px 0 0;
         color: var(--ink-soft);
         font-size: clamp(0.98rem, 1.4vw, 1.15rem);
@@ -428,22 +445,53 @@
         line-height: 0.85;
       }
 
-      .comparison {
+      .version-strip {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 14px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 242, 219, 0.48);
+      }
+
+      .version-strip strong {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+      }
+
+      .version-strip span {
+        min-width: 0;
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .compare-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: clamp(14px, 2vw, 22px);
       }
 
-      .version {
+      .compare-card {
         display: grid;
-        grid-template-rows: auto minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, auto) auto;
         min-width: 0;
+        overflow: hidden;
         border: 1px solid var(--line);
         border-radius: 8px;
-        background: rgba(255, 242, 219, 0.46);
+        background: rgba(255, 253, 246, 0.82);
       }
 
-      .version-head {
+      .compare-head {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -453,37 +501,36 @@
         border-bottom: 1px solid var(--line);
       }
 
-      .version-meta {
+      .compare-title {
         display: grid;
         gap: 4px;
         min-width: 0;
       }
 
-      .version-name {
+      .compare-title strong {
         font-family: var(--mono);
-        font-size: 0.76rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
       }
 
-      .version-root {
-        min-width: 0;
+      .compare-title span {
         color: var(--ink-faint);
         font-family: var(--mono);
-        font-size: 0.64rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        font-size: 0.62rem;
+        text-transform: uppercase;
       }
 
-      .version-actions {
+      .compare-actions,
+      .video-controls {
         display: flex;
-        flex: 0 0 auto;
+        flex-wrap: wrap;
         gap: 6px;
       }
 
       .pair-button,
       .file-button,
-      .modal-close {
+      .modal-close,
+      .video-button {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -504,79 +551,173 @@
 
       .pair-button:hover,
       .file-button:hover,
-      .modal-close:hover {
+      .modal-close:hover,
+      .video-button:hover {
         color: var(--paper);
         border-color: transparent;
         background: var(--ink);
       }
 
-      .version-body {
+      .compare-shell {
+        --split: 50%;
+        position: relative;
         display: grid;
-        align-items: center;
-        justify-items: center;
-        min-height: 0;
-        padding: clamp(18px, 3vw, 32px);
-        background: rgba(75, 46, 23, 0.1);
-        border-radius: 0 0 8px 8px;
-      }
-
-      .media-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1px;
-        width: 100%;
-        max-width: 920px;
+        aspect-ratio: 16 / 10;
+        min-height: 260px;
         overflow: hidden;
-        background: var(--line);
-        border-radius: 4px;
+        background:
+          linear-gradient(135deg, rgba(33, 27, 20, 0.96), rgba(75, 46, 23, 0.84)),
+          #211b14;
+        user-select: none;
       }
 
-      .media-card {
-        min-width: 0;
-        background: var(--cream);
+      .compare-shell::after {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        content: "";
+        background:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.34), transparent 24%, transparent 72%, rgba(0, 0, 0, 0.28)),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.18), transparent 28%, transparent 72%, rgba(0, 0, 0, 0.18));
       }
 
-      .media-label {
+      .compare-layer {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+      }
+
+      .compare-after {
+        z-index: 2;
+        clip-path: inset(0 0 0 var(--split));
+      }
+
+      .compare-layer img,
+      .compare-layer video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .compare-layer video {
+        background: #17120d;
+        pointer-events: none;
+      }
+
+      .compare-copy {
+        position: absolute;
+        z-index: 4;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        inset: 20px 20px auto;
+        pointer-events: none;
+      }
+
+      .compare-copy span {
+        color: #fff9ec;
+        font-family: var(--retro);
+        font-size: clamp(0.8rem, 1.4vw, 1.12rem);
+        line-height: 1;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.48);
+        text-transform: uppercase;
+      }
+
+      .compare-date {
+        position: absolute;
+        right: 20px;
+        bottom: 18px;
+        z-index: 4;
+        color: #fff9ec;
+        font-family: var(--retro);
+        font-size: clamp(0.8rem, 1.3vw, 1.02rem);
+        line-height: 1;
+        pointer-events: none;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.5);
+        text-transform: uppercase;
+      }
+
+      .compare-line {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: var(--split);
+        z-index: 5;
+        width: 2px;
+        transform: translateX(-1px);
+        background: rgba(255, 249, 236, 0.92);
+        box-shadow: 0 0 18px rgba(0, 0, 0, 0.38);
+        pointer-events: none;
+      }
+
+      .compare-handle {
+        position: absolute;
+        top: 50%;
+        left: var(--split);
+        z-index: 6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 70px;
+        height: 70px;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba(255, 249, 236, 0.88);
+        border-radius: 999px;
+        background: rgba(255, 249, 236, 0.2);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+        backdrop-filter: blur(8px);
+        pointer-events: none;
+      }
+
+      .compare-handle::before,
+      .compare-handle::after {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-top: 3px solid #fff9ec;
+        border-left: 3px solid #fff9ec;
+        content: "";
+      }
+
+      .compare-handle::before {
+        transform: rotate(-45deg);
+      }
+
+      .compare-handle::after {
+        transform: rotate(135deg);
+      }
+
+      .compare-range {
+        position: absolute;
+        inset: 0;
+        z-index: 7;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        opacity: 0;
+        cursor: ew-resize;
+      }
+
+      .compare-foot {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 10px;
-        min-height: 35px;
-        padding: 10px 11px 8px;
+        min-height: 48px;
+        padding: 10px 12px;
+        border-top: 1px solid var(--line);
+        background: rgba(255, 242, 219, 0.46);
+      }
+
+      .compare-foot span {
         color: var(--ink-faint);
         font-family: var(--mono);
-        font-size: 0.63rem;
+        font-size: 0.62rem;
         text-transform: uppercase;
-      }
-
-      .media-label strong {
-        color: var(--ink);
-        font-weight: 500;
-      }
-
-      .media-shell {
-        display: grid;
-        place-items: center;
-        aspect-ratio: 4 / 3;
-        background:
-          linear-gradient(135deg, rgba(33, 27, 20, 0.94), rgba(75, 46, 23, 0.82)),
-          #211b14;
-      }
-
-      video,
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-
-      .media-shell video,
-      .media-shell img {
-        object-fit: contain;
-      }
-
-      video {
-        background: #17120d;
       }
 
       .review-modal {
@@ -586,7 +727,7 @@
         display: grid;
         place-items: center;
         padding: clamp(14px, 3vw, 34px);
-        background: rgba(33, 27, 20, 0.58);
+        background: rgba(33, 27, 20, 0.62);
         backdrop-filter: blur(18px);
       }
 
@@ -597,7 +738,7 @@
       .modal-panel {
         display: grid;
         grid-template-rows: auto minmax(0, 1fr);
-        width: min(100%, 1560px);
+        width: min(100%, 1320px);
         max-height: min(92vh, 980px);
         overflow: hidden;
         border: 1px solid rgba(255, 249, 236, 0.24);
@@ -640,52 +781,20 @@
       }
 
       .modal-body {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1px;
         min-height: 0;
         overflow: auto;
-        background: var(--line);
-      }
-
-      .modal-item {
-        display: grid;
-        grid-template-rows: auto minmax(0, 1fr);
-        min-height: 0;
-        background: rgba(255, 242, 219, 0.72);
-      }
-
-      .modal-item-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        padding: 11px 12px;
-        background: rgba(255, 253, 246, 0.8);
-      }
-
-      .modal-item-head strong {
-        font-family: var(--mono);
-        font-size: 0.72rem;
-        text-transform: uppercase;
-      }
-
-      .modal-media {
-        display: grid;
-        place-items: center;
-        min-height: 0;
         padding: clamp(12px, 2vw, 24px);
-        background:
-          linear-gradient(135deg, rgba(33, 27, 20, 0.94), rgba(75, 46, 23, 0.82)),
-          #211b14;
+        background: rgba(75, 46, 23, 0.1);
       }
 
-      .modal-media img,
-      .modal-media video {
-        width: 100%;
-        height: 100%;
-        max-height: calc(92vh - 180px);
-        object-fit: contain;
+      .modal-body .compare-card {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .modal-body .compare-shell {
+        aspect-ratio: 16 / 9;
+        min-height: min(62vh, 620px);
       }
 
       .empty {
@@ -753,40 +862,13 @@
         text-transform: uppercase;
       }
 
-      body[data-mode="personal"] .version:not([data-pack="personal"]),
-      body[data-mode="classic"] .version:not([data-pack="classic"]),
-      body[data-mode="modern"] .version:not([data-pack="modern"]),
-      body[data-media="video"] .media-card[data-kind="photo"],
-      body[data-media="photo"] .media-card[data-kind="video"] {
-        display: none;
-      }
-
-      body[data-mode="personal"] .comparison,
-      body[data-mode="classic"] .comparison,
-      body[data-mode="modern"] .comparison {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      body[data-media="video"] .media-grid,
-      body[data-media="photo"] .media-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
       @media (max-width: 1080px) {
         .hero-copy,
         .controls {
           grid-template-columns: 1fr;
         }
 
-        .segmented[data-compact] {
-          justify-self: stretch;
-        }
-
-        .search {
-          max-width: none;
-        }
-
-        .comparison {
+        .compare-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -811,7 +893,7 @@
         }
 
         h1 {
-          font-size: clamp(3.1rem, 18vw, 5.2rem);
+          font-size: clamp(3rem, 17vw, 5rem);
         }
 
         .stats {
@@ -832,6 +914,11 @@
           font-size: 0.66rem;
         }
 
+        .active-pack {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
         .preset {
           padding: 15px;
         }
@@ -844,28 +931,49 @@
           display: none;
         }
 
-        .version-head {
+        .version-strip {
           align-items: flex-start;
           flex-direction: column;
-          gap: 4px;
         }
 
-        .version-actions {
+        .version-strip span {
           width: 100%;
         }
 
-        .pair-button {
+        .compare-head,
+        .compare-foot {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .compare-actions,
+        .video-controls {
+          width: 100%;
+        }
+
+        .pair-button,
+        .file-button,
+        .video-button {
           flex: 1 1 0;
         }
 
-        .version-body {
-          padding: 16px;
+        .compare-shell {
+          aspect-ratio: 4 / 3;
+          min-height: 220px;
         }
 
-        .media-grid,
-        body[data-media="video"] .media-grid,
-        body[data-media="photo"] .media-grid {
-          grid-template-columns: 1fr;
+        .compare-copy {
+          inset: 14px 14px auto;
+        }
+
+        .compare-date {
+          right: 14px;
+          bottom: 14px;
+        }
+
+        .compare-handle {
+          width: 58px;
+          height: 58px;
         }
 
         .modal-panel {
@@ -876,18 +984,14 @@
           align-items: flex-start;
         }
 
-        .modal-body {
-          grid-template-columns: 1fr;
-        }
-
-        .modal-media img,
-        .modal-media video {
-          max-height: 62vh;
+        .modal-body .compare-shell {
+          aspect-ratio: 4 / 3;
+          min-height: 54vh;
         }
       }
     </style>
   </head>
-  <body data-mode="compare" data-media="all">
+  <body data-version="personal">
     <header class="hero" id="top">
       <div class="shell">
         <div class="topbar">
@@ -899,16 +1003,16 @@
             </span>
           </a>
           <div class="meta-line" aria-label="Review metadata">
-            <span class="chip">2026-06-10</span>
+            <span class="chip">2026-06-12</span>
             <span class="chip">Personal + Classic + Modern</span>
           </div>
         </div>
 
         <div class="hero-copy">
-          <h1>Preset review board</h1>
+          <h1>Preset compare</h1>
           <p>
-            Same preset, three source packs. Video before/after and photo before/after stay in one visual row,
-            so weak looks have nowhere to hide.
+            Pick one version, then drag the split line on every preset. Each card shows the same before/after
+            interaction for video and photo, without forcing three packs into one visual pile.
           </p>
         </div>
 
@@ -922,8 +1026,8 @@
             <span>source versions</span>
           </div>
           <div class="stat">
-            <strong id="mediaCount">276</strong>
-            <span>media checks</span>
+            <strong id="mediaCount">46</strong>
+            <span>active comparisons</span>
           </div>
         </div>
       </div>
@@ -933,22 +1037,19 @@
       <div class="shell">
         <div class="controls" aria-label="Review controls">
           <div class="segmented" role="tablist" aria-label="Version view">
-            <button class="tab is-active" type="button" data-mode-control="compare">Compare all</button>
-            <button class="tab" type="button" data-mode-control="personal">Version 1</button>
-            <button class="tab" type="button" data-mode-control="classic">Version 2</button>
-            <button class="tab" type="button" data-mode-control="modern">Version 3</button>
-          </div>
-
-          <div class="segmented" data-compact role="tablist" aria-label="Media filter">
-            <button class="tab is-active" type="button" data-media-control="all">Video + photo</button>
-            <button class="tab" type="button" data-media-control="video">Video</button>
-            <button class="tab" type="button" data-media-control="photo">Photo</button>
+            <button class="tab is-active" type="button" data-version-control="personal">Version 1</button>
+            <button class="tab" type="button" data-version-control="classic">Version 2</button>
+            <button class="tab" type="button" data-version-control="modern">Version 3</button>
           </div>
 
           <label>
             <span class="visually-hidden">Search presets</span>
             <input class="search" id="searchInput" type="search" placeholder="Search preset..." autocomplete="off" />
           </label>
+        </div>
+        <div class="active-pack" aria-live="polite">
+          <span><strong id="activeVersionLabel">Version 1</strong> is active</span>
+          <span id="activeVersionRoot">home-reel-presets-personal-2026-06-12</span>
         </div>
         <nav class="quick-nav" id="quickNav" aria-label="Preset shortcuts"></nav>
       </div>
@@ -1038,11 +1139,9 @@
         index: index + 1,
       }));
 
-      const mediaItems = [
-        ["video", "before", "Video", "Before", "mp4"],
-        ["video", "after", "Video", "After", "mp4"],
-        ["photo", "before", "Photo", "Before", "jpg"],
-        ["photo", "after", "Photo", "After", "jpg"],
+      const KINDS = [
+        { id: "video", label: "Video", ext: "mp4" },
+        { id: "photo", label: "Photo", ext: "jpg" },
       ];
 
       const presetList = document.querySelector("#presetList");
@@ -1053,6 +1152,10 @@
       const modalTitle = document.querySelector("#modalTitle");
       const modalMeta = document.querySelector("#modalMeta");
       const modalBody = document.querySelector("#modalBody");
+      const activeVersionLabel = document.querySelector("#activeVersionLabel");
+      const activeVersionRoot = document.querySelector("#activeVersionRoot");
+
+      let activePackId = "personal";
 
       function escapeAttr(value) {
         return String(value)
@@ -1074,101 +1177,84 @@
         return PRESETS.find((preset) => preset.id === presetId);
       }
 
-      function renderModalItem({ pack, preset, kind, state }) {
-        const ext = kind === "video" ? "mp4" : "jpg";
-        const src = mediaPath(pack, preset, kind, state, ext);
-        const label = state === "before" ? "Before" : "After";
-        const alt = `${preset.name} ${pack.label} ${kind} ${label.toLowerCase()}`;
-        const media =
-          kind === "video"
-            ? `<video controls playsinline preload="metadata" src="${escapeAttr(src)}" aria-label="${escapeAttr(alt)}"></video>`
-            : `<img loading="eager" decoding="async" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" />`;
+      function activePack() {
+        return findPack(activePackId) || PACKS[0];
+      }
+
+      function renderMediaElement({ pack, preset, kind, state, eager = false }) {
+        const src = mediaPath(pack, preset, kind.id, state, kind.ext);
+        const label = state === "before" ? "Before" : `After · ${preset.name}`;
+        const alt = `${preset.name} ${pack.label} ${kind.label.toLowerCase()} ${state}`;
+
+        if (kind.id === "video") {
+          return `<video muted playsinline preload="metadata" src="${escapeAttr(`${src}#t=0.1`)}" aria-label="${escapeAttr(alt)}"></video>`;
+        }
+
+        return `<img loading="${eager ? "eager" : "lazy"}" decoding="async" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" />`;
+      }
+
+      function renderCompareCard({ pack, preset, kind, modal = false }) {
+        const beforeSrc = mediaPath(pack, preset, kind.id, "before", kind.ext);
+        const afterSrc = mediaPath(pack, preset, kind.id, "after", kind.ext);
+        const openAttrs = `data-open-compare data-pack="${pack.id}" data-preset="${preset.id}" data-kind="${kind.id}"`;
+        const modalAttr = modal ? "data-modal-compare" : "";
+        const videoControls =
+          kind.id === "video"
+            ? `
+              <div class="video-controls">
+                <button class="video-button" type="button" data-video-action="play">Play</button>
+                <button class="video-button" type="button" data-video-action="restart">Restart</button>
+                <button class="video-button" type="button" data-video-action="mute">Muted</button>
+              </div>
+            `
+            : `<span>Drag the split line</span>`;
 
         return `
-          <article class="modal-item">
-            <header class="modal-item-head">
-              <strong>${label}</strong>
-              <a class="file-button" href="${escapeAttr(src)}" target="_blank" rel="noopener">Open file</a>
+          <section class="compare-card" data-compare data-kind="${kind.id}" ${modalAttr}>
+            <header class="compare-head">
+              <div class="compare-title">
+                <strong>${kind.label}</strong>
+                <span>Before / after · ${pack.label}</span>
+              </div>
+              <div class="compare-actions">
+                ${modal ? "" : `<button class="pair-button" type="button" ${openAttrs}>Full view</button>`}
+                <a class="file-button" href="${escapeAttr(beforeSrc)}" target="_blank" rel="noopener">Before</a>
+                <a class="file-button" href="${escapeAttr(afterSrc)}" target="_blank" rel="noopener">After</a>
+              </div>
             </header>
-            <div class="modal-media">
-              ${media}
-            </div>
-          </article>
-        `;
-      }
-
-      function openPair({ packId, presetId, kind }) {
-        const pack = findPack(packId);
-        const preset = findPresetById(presetId);
-        if (!pack || !preset) return;
-
-        modalTitle.textContent = `${preset.name} · ${pack.label}`;
-        modalMeta.textContent = `${kind} before / after · ${pack.root}`;
-        modalBody.innerHTML = ["before", "after"]
-          .map((state) => renderModalItem({ pack, preset, kind, state }))
-          .join("");
-        reviewModal.hidden = false;
-        document.body.style.overflow = "hidden";
-        reviewModal.querySelector("[data-modal-close]")?.focus();
-      }
-
-      function closeModal() {
-        modalBody.querySelectorAll("video").forEach((video) => {
-          video.pause();
-          video.removeAttribute("src");
-          video.load();
-        });
-        modalBody.innerHTML = "";
-        reviewModal.hidden = true;
-        document.body.style.overflow = "";
-      }
-
-      function renderMedia(pack, preset) {
-        return mediaItems
-          .map(([type, state, typeLabel, stateLabel, ext]) => {
-            const src = mediaPath(pack, preset, type, state, ext);
-            const alt = `${preset.name} ${pack.label} ${typeLabel.toLowerCase()} ${stateLabel.toLowerCase()}`;
-            const element =
-              type === "video"
-                ? `<video controls muted playsinline preload="metadata" src="${escapeAttr(src)}" aria-label="${escapeAttr(alt)}"></video>`
-                : `<img loading="eager" decoding="async" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" />`;
-
-            return `
-              <figure class="media-card" data-kind="${type}">
-                <figcaption class="media-label">
-                  <strong>${typeLabel}</strong>
-                  <span>${stateLabel}</span>
-                </figcaption>
-                <div class="media-shell">${element}</div>
-              </figure>
-            `;
-          })
-          .join("");
-      }
-
-      function renderVersion(pack, preset) {
-        return `
-          <section class="version" data-pack="${pack.id}">
-            <div class="version-head">
-              <div class="version-meta">
-                <strong class="version-name">${pack.label}</strong>
-                <span class="version-root">${pack.root}</span>
+            <div class="compare-shell" style="--split: 50%;">
+              <div class="compare-layer compare-before">
+                ${renderMediaElement({ pack, preset, kind, state: "before", eager: preset.index < 3 || modal })}
               </div>
-              <div class="version-actions">
-                <button class="pair-button" type="button" data-open-pair data-pack="${pack.id}" data-preset="${preset.id}" data-kind="video">Open video pair</button>
-                <button class="pair-button" type="button" data-open-pair data-pack="${pack.id}" data-preset="${preset.id}" data-kind="photo">Open photo pair</button>
+              <div class="compare-layer compare-after">
+                ${renderMediaElement({ pack, preset, kind, state: "after", eager: preset.index < 3 || modal })}
               </div>
-            </div>
-            <div class="version-body">
-              <div class="media-grid">
-                ${renderMedia(pack, preset)}
+              <div class="compare-copy" aria-hidden="true">
+                <span>Before</span>
+                <span>After · ${preset.name}</span>
               </div>
+              <span class="compare-date" aria-hidden="true">Aug 15 1989</span>
+              <span class="compare-line" aria-hidden="true"></span>
+              <span class="compare-handle" aria-hidden="true"></span>
+              <input
+                class="compare-range"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="${escapeAttr(`${preset.name} ${pack.label} ${kind.label} before after split`)}"
+                data-compare-range
+              />
             </div>
+            <footer class="compare-foot">
+              ${videoControls}
+            </footer>
           </section>
         `;
       }
 
       function renderPreset(preset) {
+        const pack = activePack();
         const number = String(preset.index).padStart(2, "0");
 
         return `
@@ -1189,21 +1275,64 @@
               </div>
               <div class="preset-index">${number}</div>
             </header>
-            <div class="comparison">
-              ${PACKS.map((pack) => renderVersion(pack, preset)).join("")}
+            <div class="version-strip">
+              <strong>${pack.label}</strong>
+              <span>${pack.root}</span>
+            </div>
+            <div class="compare-grid">
+              ${KINDS.map((kind) => renderCompareCard({ pack, preset, kind })).join("")}
             </div>
           </article>
         `;
       }
 
-      function render() {
+      function pauseVideos(root = document) {
+        root.querySelectorAll("video").forEach((video) => {
+          video.pause();
+        });
+        root.querySelectorAll("[data-compare].is-playing").forEach((card) => {
+          card.classList.remove("is-playing");
+          const playButton = card.querySelector('[data-video-action="play"]');
+          if (playButton) playButton.textContent = "Play";
+        });
+      }
+
+      function primeVideos(root = document) {
+        root.querySelectorAll("video").forEach((video) => {
+          const revealFrame = () => {
+            if (video.readyState >= 1 && video.currentTime < 0.08) {
+              try {
+                video.currentTime = 0.1;
+              } catch (error) {
+                return;
+              }
+            }
+          };
+
+          video.addEventListener("loadedmetadata", revealFrame, { once: true });
+          video.addEventListener("loadeddata", revealFrame, { once: true });
+          revealFrame();
+        });
+      }
+
+      function renderPresets() {
+        const pack = activePack();
+        document.body.dataset.version = pack.id;
+        activeVersionLabel.textContent = pack.label;
+        activeVersionRoot.textContent = pack.root;
         presetList.innerHTML = PRESETS.map(renderPreset).join("");
+        document.querySelector("#mediaCount").textContent = PRESETS.length * KINDS.length;
+        primeVideos(presetList);
+        applySearch();
+      }
+
+      function renderShell() {
         quickNav.innerHTML = PRESETS.map(
           (preset) => `<a class="quick-link" href="#${preset.id}">${preset.name}</a>`
         ).join("");
         document.querySelector("#presetCount").textContent = PRESETS.length;
         document.querySelector("#sourceCount").textContent = PACKS.length;
-        document.querySelector("#mediaCount").textContent = PRESETS.length * PACKS.length * mediaItems.length;
+        renderPresets();
       }
 
       function setActiveButton(selector, value, attr) {
@@ -1225,30 +1354,126 @@
         emptyState.style.display = visible ? "none" : "block";
       }
 
+      function openCompare({ packId, presetId, kindId }) {
+        const pack = findPack(packId);
+        const preset = findPresetById(presetId);
+        const kind = KINDS.find((item) => item.id === kindId);
+        if (!pack || !preset || !kind) return;
+
+        pauseVideos();
+        modalTitle.textContent = `${preset.name} · ${pack.label}`;
+        modalMeta.textContent = `${kind.label} before / after · ${pack.root}`;
+        modalBody.innerHTML = renderCompareCard({ pack, preset, kind, modal: true });
+        primeVideos(modalBody);
+        reviewModal.hidden = false;
+        document.body.style.overflow = "hidden";
+        reviewModal.querySelector("[data-modal-close]")?.focus();
+      }
+
+      function closeModal() {
+        pauseVideos(modalBody);
+        modalBody.querySelectorAll("video").forEach((video) => {
+          video.removeAttribute("src");
+          video.load();
+        });
+        modalBody.innerHTML = "";
+        reviewModal.hidden = true;
+        document.body.style.overflow = "";
+      }
+
+      function updateSplit(range) {
+        const shell = range.closest(".compare-shell");
+        if (!shell) return;
+        shell.style.setProperty("--split", `${range.value}%`);
+      }
+
+      async function setVideoPlayback(card, action) {
+        const videos = Array.from(card.querySelectorAll("video"));
+        if (!videos.length) return;
+        const playButton = card.querySelector('[data-video-action="play"]');
+        const muteButton = card.querySelector('[data-video-action="mute"]');
+
+        if (action === "restart") {
+          videos.forEach((video) => {
+            video.currentTime = 0;
+          });
+          return;
+        }
+
+        if (action === "mute") {
+          const shouldMute = !videos[0].muted;
+          videos.forEach((video) => {
+            video.muted = shouldMute;
+          });
+          if (muteButton) muteButton.textContent = shouldMute ? "Muted" : "Sound";
+          return;
+        }
+
+        if (card.classList.contains("is-playing")) {
+          videos.forEach((video) => video.pause());
+          card.classList.remove("is-playing");
+          if (playButton) playButton.textContent = "Play";
+          return;
+        }
+
+        const time = videos[0].currentTime || 0;
+        videos.forEach((video) => {
+          if (Number.isFinite(time)) video.currentTime = time;
+        });
+
+        try {
+          await Promise.all(videos.map((video) => video.play()));
+          card.classList.add("is-playing");
+          if (playButton) playButton.textContent = "Pause";
+        } catch (error) {
+          videos.forEach((video) => video.pause());
+          card.classList.remove("is-playing");
+          if (playButton) playButton.textContent = "Play";
+        }
+      }
+
+      setInterval(() => {
+        document.querySelectorAll('[data-compare][data-kind="video"].is-playing').forEach((card) => {
+          const videos = Array.from(card.querySelectorAll("video"));
+          if (videos.length < 2) return;
+          const source = videos[0];
+          videos.slice(1).forEach((video) => {
+            if (Math.abs(video.currentTime - source.currentTime) > 0.16) {
+              video.currentTime = source.currentTime;
+            }
+          });
+        });
+      }, 400);
+
+      document.addEventListener("input", (event) => {
+        const range = event.target.closest("[data-compare-range]");
+        if (range) updateSplit(range);
+      });
+
       document.addEventListener("click", (event) => {
-        const modeButton = event.target.closest("[data-mode-control]");
-        const mediaButton = event.target.closest("[data-media-control]");
-        const pairButton = event.target.closest("[data-open-pair]");
+        const versionButton = event.target.closest("[data-version-control]");
+        const openButton = event.target.closest("[data-open-compare]");
+        const videoButton = event.target.closest("[data-video-action]");
         const modalClose = event.target.closest("[data-modal-close]");
 
-        if (modeButton) {
-          const mode = modeButton.dataset.modeControl;
-          document.body.dataset.mode = mode;
-          setActiveButton("[data-mode-control]", mode, "data-mode-control");
+        if (versionButton) {
+          activePackId = versionButton.dataset.versionControl;
+          pauseVideos();
+          setActiveButton("[data-version-control]", activePackId, "data-version-control");
+          renderPresets();
         }
 
-        if (mediaButton) {
-          const media = mediaButton.dataset.mediaControl;
-          document.body.dataset.media = media;
-          setActiveButton("[data-media-control]", media, "data-media-control");
-        }
-
-        if (pairButton) {
-          openPair({
-            packId: pairButton.dataset.pack,
-            presetId: pairButton.dataset.preset,
-            kind: pairButton.dataset.kind,
+        if (openButton) {
+          openCompare({
+            packId: openButton.dataset.pack,
+            presetId: openButton.dataset.preset,
+            kindId: openButton.dataset.kind,
           });
+        }
+
+        if (videoButton) {
+          const card = videoButton.closest("[data-compare]");
+          if (card) setVideoPlayback(card, videoButton.dataset.videoAction);
         }
 
         if (modalClose || event.target === reviewModal) {
@@ -1264,7 +1489,7 @@
 
       searchInput.addEventListener("input", applySearch);
 
-      render();
+      renderShell();
     </script>
   </body>
 </html>
