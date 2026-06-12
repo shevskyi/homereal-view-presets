@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HomeReel Preset Review</title>
+    <link
+      rel="icon"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="32" fill="%23211b14"/><text x="32" y="39" text-anchor="middle" font-family="Georgia" font-size="22" fill="%23fff9ec">HR</text></svg>'
+    />
+    <meta
+      name="description"
+      content="Client review page for HomeReel preset video and photo before/after comparisons."
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap");
+      @import url("https://fonts.cdnfonts.com/css/vcr-osd-mono");
+
+      :root {
+        --paper: #fff9ec;
+        --page: #fff2db;
+        --page-deep: #ffe6bf;
+        --ink: #211b14;
+        --ink-soft: rgba(33, 27, 20, 0.72);
+        --ink-faint: rgba(33, 27, 20, 0.48);
+        --line: rgba(81, 56, 26, 0.14);
+        --line-strong: rgba(81, 56, 26, 0.24);
+        --accent: #e16411;
+        --accent-dark: #b94f0f;
+        --brown: #4b2e17;
+        --brown-soft: #7a5436;
+        --cream: #fffdf6;
+        --shadow: 0 22px 70px rgba(75, 46, 23, 0.12);
+        --display: "Baskervville", Georgia, serif;
+        --body: "Inter Tight", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --mono: "DM Mono", "Courier New", monospace;
+        --retro: "VCR OSD Mono", "DM Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--page);
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 18% 0%, rgba(225, 100, 17, 0.13), transparent 28rem),
+          linear-gradient(180deg, var(--paper) 0%, var(--page) 44%, var(--page-deep) 100%);
+        font-family: var(--body);
+        letter-spacing: 0;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        opacity: 0.18;
+        background-image:
+          linear-gradient(rgba(75, 46, 23, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(75, 46, 23, 0.04) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(180deg, black, transparent 70%);
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .shell {
+        width: min(100% - 32px, 1480px);
+        margin: 0 auto;
+      }
+
+      .hero {
+        position: relative;
+        padding: 28px 0 18px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        min-height: 50px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        color: var(--paper);
+        background: linear-gradient(145deg, var(--ink), var(--brown-soft));
+        border: 1px solid rgba(33, 27, 20, 0.24);
+        border-radius: 999px;
+        box-shadow: 0 10px 22px rgba(75, 46, 23, 0.16);
+        font-family: var(--retro);
+        font-size: 0.75rem;
+      }
+
+      .brand-text {
+        display: grid;
+        gap: 1px;
+      }
+
+      .brand-name {
+        font-family: var(--display);
+        font-size: clamp(1.35rem, 2vw, 1.9rem);
+        line-height: 0.95;
+      }
+
+      .brand-sub {
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.69rem;
+        text-transform: uppercase;
+      }
+
+      .hero-copy {
+        display: grid;
+        grid-template-columns: minmax(0, 0.86fr) minmax(260px, 0.42fr);
+        align-items: end;
+        gap: clamp(24px, 5vw, 82px);
+        padding: clamp(34px, 7vw, 88px) 0 clamp(24px, 4vw, 48px);
+      }
+
+      h1 {
+        max-width: 940px;
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(3.3rem, 10vw, 8.6rem);
+        font-weight: 400;
+        line-height: 0.83;
+        text-wrap: balance;
+      }
+
+      .hero-copy p {
+        max-width: 470px;
+        margin: 0 0 10px;
+        color: var(--ink-soft);
+        font-size: clamp(1rem, 1.5vw, 1.28rem);
+        line-height: 1.38;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .stat {
+        min-width: 0;
+        padding: 16px 14px;
+        background: rgba(255, 249, 236, 0.78);
+        backdrop-filter: blur(16px);
+      }
+
+      .stat strong,
+      .stat span {
+        display: block;
+      }
+
+      .stat strong {
+        font-family: var(--display);
+        font-size: clamp(1.55rem, 3vw, 2.35rem);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .stat span {
+        margin-top: 8px;
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      .controls-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding: 10px 0 16px;
+        background: linear-gradient(180deg, rgba(255, 249, 236, 0.96), rgba(255, 242, 219, 0.88));
+        border-top: 1px solid rgba(81, 56, 26, 0.08);
+        border-bottom: 1px solid rgba(81, 56, 26, 0.12);
+        backdrop-filter: blur(18px);
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(190px, 260px);
+        gap: 12px;
+        align-items: center;
+      }
+
+      .segmented {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        min-width: 0;
+        padding: 4px;
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 253, 246, 0.78);
+        box-shadow: 0 10px 32px rgba(75, 46, 23, 0.08);
+        scrollbar-width: none;
+      }
+
+      .segmented::-webkit-scrollbar {
+        display: none;
+      }
+
+      .segmented[data-compact] {
+        justify-self: end;
+      }
+
+      .tab {
+        flex: 0 0 auto;
+        min-height: 38px;
+        padding: 0 16px;
+        color: var(--ink-soft);
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        cursor: pointer;
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        line-height: 1;
+        text-transform: uppercase;
+        transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+      }
+
+      .tab:hover,
+      .tab.is-active {
+        color: var(--paper);
+        background: var(--ink);
+        box-shadow: 0 9px 22px rgba(75, 46, 23, 0.18);
+      }
+
+      .search {
+        width: 100%;
+        height: 48px;
+        padding: 0 17px;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        outline: 0;
+        background: rgba(255, 253, 246, 0.86);
+        box-shadow: 0 10px 32px rgba(75, 46, 23, 0.08);
+        font-size: 0.98rem;
+      }
+
+      .search:focus {
+        border-color: rgba(225, 100, 17, 0.5);
+        box-shadow: 0 0 0 4px rgba(225, 100, 17, 0.1);
+      }
+
+      .quick-nav {
+        display: flex;
+        gap: 8px;
+        padding: 18px 0 4px;
+        overflow-x: auto;
+        mask-image: linear-gradient(90deg, black 0, black calc(100% - 54px), transparent 100%);
+        scrollbar-width: none;
+      }
+
+      .quick-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .quick-nav::after {
+        flex: 0 0 48px;
+        content: "";
+      }
+
+      .quick-link {
+        flex: 0 0 auto;
+        padding: 9px 12px 8px;
+        color: var(--ink-soft);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 253, 246, 0.55);
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .quick-link:hover {
+        color: var(--paper);
+        background: var(--accent);
+        border-color: transparent;
+      }
+
+      main {
+        padding: clamp(20px, 4vw, 48px) 0 72px;
+      }
+
+      .preset-list {
+        display: grid;
+        gap: clamp(18px, 3vw, 34px);
+      }
+
+      .preset {
+        position: relative;
+        overflow: clip;
+        padding: clamp(18px, 3vw, 28px);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(180deg, rgba(255, 253, 246, 0.88), rgba(255, 249, 236, 0.74)),
+          var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .preset::before {
+        position: absolute;
+        inset: 0 0 auto;
+        height: 4px;
+        content: "";
+        background: linear-gradient(90deg, var(--accent), rgba(225, 100, 17, 0), var(--brown-soft));
+        opacity: 0.78;
+      }
+
+      .preset-head {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        align-items: start;
+        margin-bottom: clamp(18px, 3vw, 26px);
+      }
+
+      .preset-title {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px 14px;
+      }
+
+      .preset-title h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(2rem, 4vw, 4.1rem);
+        font-weight: 400;
+        line-height: 0.92;
+      }
+
+      .meta-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 13px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        min-height: 27px;
+        padding: 0 10px;
+        color: var(--brown);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 242, 219, 0.65);
+        font-family: var(--mono);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+      }
+
+      .chip[data-tier="core"] {
+        color: var(--paper);
+        border-color: transparent;
+        background: var(--accent);
+      }
+
+      .preset-desc {
+        max-width: 660px;
+        margin: 13px 0 0;
+        color: var(--ink-soft);
+        font-size: clamp(0.98rem, 1.4vw, 1.15rem);
+        line-height: 1.4;
+      }
+
+      .preset-index {
+        color: rgba(33, 27, 20, 0.2);
+        font-family: var(--retro);
+        font-size: clamp(2.1rem, 4vw, 4.5rem);
+        line-height: 0.85;
+      }
+
+      .comparison {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+        gap: clamp(14px, 2vw, 22px);
+      }
+
+      .version {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 242, 219, 0.46);
+      }
+
+      .version-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 52px;
+        padding: 13px 14px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .version-meta {
+        display: grid;
+        gap: 4px;
+        min-width: 0;
+      }
+
+      .version-name {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+      }
+
+      .version-root {
+        min-width: 0;
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.64rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .version-actions {
+        display: flex;
+        flex: 0 0 auto;
+        gap: 6px;
+      }
+
+      .pair-button,
+      .file-button,
+      .modal-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 32px;
+        padding: 0 10px;
+        color: var(--ink);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(255, 253, 246, 0.72);
+        cursor: pointer;
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: color 160ms ease, background 160ms ease, border-color 160ms ease;
+      }
+
+      .pair-button:hover,
+      .file-button:hover,
+      .modal-close:hover {
+        color: var(--paper);
+        border-color: transparent;
+        background: var(--ink);
+      }
+
+      .version-body {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        min-height: 0;
+        padding: clamp(18px, 3vw, 32px);
+        background: rgba(75, 46, 23, 0.1);
+        border-radius: 0 0 8px 8px;
+      }
+
+      .media-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        width: 100%;
+        max-width: 920px;
+        overflow: hidden;
+        background: var(--line);
+        border-radius: 4px;
+      }
+
+      .media-card {
+        min-width: 0;
+        background: var(--cream);
+      }
+
+      .media-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 35px;
+        padding: 10px 11px 8px;
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.63rem;
+        text-transform: uppercase;
+      }
+
+      .media-label strong {
+        color: var(--ink);
+        font-weight: 500;
+      }
+
+      .media-shell {
+        display: grid;
+        place-items: center;
+        aspect-ratio: 4 / 3;
+        background:
+          linear-gradient(135deg, rgba(33, 27, 20, 0.94), rgba(75, 46, 23, 0.82)),
+          #211b14;
+      }
+
+      video,
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .media-shell video,
+      .media-shell img {
+        object-fit: contain;
+      }
+
+      video {
+        background: #17120d;
+      }
+
+      .review-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: grid;
+        place-items: center;
+        padding: clamp(14px, 3vw, 34px);
+        background: rgba(33, 27, 20, 0.58);
+        backdrop-filter: blur(18px);
+      }
+
+      .review-modal[hidden] {
+        display: none;
+      }
+
+      .modal-panel {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        width: min(100%, 1560px);
+        max-height: min(92vh, 980px);
+        overflow: hidden;
+        border: 1px solid rgba(255, 249, 236, 0.24);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: 0 34px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .modal-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 16px clamp(14px, 2vw, 22px);
+        border-bottom: 1px solid var(--line);
+        background: rgba(255, 253, 246, 0.86);
+      }
+
+      .modal-title {
+        display: grid;
+        gap: 5px;
+        min-width: 0;
+      }
+
+      .modal-title strong {
+        overflow: hidden;
+        font-family: var(--display);
+        font-size: clamp(1.55rem, 3vw, 2.7rem);
+        font-weight: 400;
+        line-height: 0.95;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .modal-title span {
+        color: var(--ink-faint);
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+
+      .modal-body {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1px;
+        min-height: 0;
+        overflow: auto;
+        background: var(--line);
+      }
+
+      .modal-item {
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr);
+        min-height: 0;
+        background: rgba(255, 242, 219, 0.72);
+      }
+
+      .modal-item-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 12px;
+        background: rgba(255, 253, 246, 0.8);
+      }
+
+      .modal-item-head strong {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+      }
+
+      .modal-media {
+        display: grid;
+        place-items: center;
+        min-height: 0;
+        padding: clamp(12px, 2vw, 24px);
+        background:
+          linear-gradient(135deg, rgba(33, 27, 20, 0.94), rgba(75, 46, 23, 0.82)),
+          #211b14;
+      }
+
+      .modal-media img,
+      .modal-media video {
+        width: 100%;
+        height: 100%;
+        max-height: calc(92vh - 180px);
+        object-fit: contain;
+      }
+
+      .empty {
+        display: none;
+        padding: 72px 0 92px;
+        text-align: center;
+      }
+
+      .empty h2 {
+        margin: 0;
+        font-family: var(--display);
+        font-size: clamp(2.3rem, 5vw, 5rem);
+        font-weight: 400;
+      }
+
+      .empty p {
+        margin: 10px auto 0;
+        max-width: 440px;
+        color: var(--ink-soft);
+        line-height: 1.45;
+      }
+
+      .footer {
+        padding: 42px 0;
+        color: rgba(255, 249, 236, 0.78);
+        background: linear-gradient(180deg, #b98a6d 0%, #4b2e17 100%);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+
+      .footer strong {
+        display: block;
+        color: var(--paper);
+        font-family: var(--display);
+        font-size: clamp(1.6rem, 3vw, 2.6rem);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .footer span {
+        display: block;
+        margin-top: 8px;
+        font-family: var(--mono);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+
+      .to-top {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        color: var(--ink);
+        border-radius: 999px;
+        background: var(--paper);
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      body[data-mode="personal"] .version:not([data-pack="personal"]),
+      body[data-mode="classic"] .version:not([data-pack="classic"]),
+      body[data-mode="modern"] .version:not([data-pack="modern"]),
+      body[data-media="video"] .media-card[data-kind="photo"],
+      body[data-media="photo"] .media-card[data-kind="video"] {
+        display: none;
+      }
+
+      body[data-mode="personal"] .comparison,
+      body[data-mode="classic"] .comparison,
+      body[data-mode="modern"] .comparison {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      body[data-media="video"] .media-grid,
+      body[data-media="photo"] .media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      @media (max-width: 1080px) {
+        .hero-copy,
+        .controls {
+          grid-template-columns: 1fr;
+        }
+
+        .segmented[data-compact] {
+          justify-self: stretch;
+        }
+
+        .search {
+          max-width: none;
+        }
+
+        .comparison {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .shell {
+          width: min(100% - 22px, 1480px);
+        }
+
+        .hero {
+          padding-top: 18px;
+        }
+
+        .topbar,
+        .footer-inner {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero-copy {
+          padding-top: 38px;
+        }
+
+        h1 {
+          font-size: clamp(3.1rem, 18vw, 5.2rem);
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+
+        .controls-wrap {
+          padding-top: 8px;
+        }
+
+        .segmented {
+          border-radius: 8px;
+        }
+
+        .tab {
+          min-height: 36px;
+          padding: 0 12px;
+          font-size: 0.66rem;
+        }
+
+        .preset {
+          padding: 15px;
+        }
+
+        .preset-head {
+          grid-template-columns: 1fr;
+        }
+
+        .preset-index {
+          display: none;
+        }
+
+        .version-head {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .version-actions {
+          width: 100%;
+        }
+
+        .pair-button {
+          flex: 1 1 0;
+        }
+
+        .version-body {
+          padding: 16px;
+        }
+
+        .media-grid,
+        body[data-media="video"] .media-grid,
+        body[data-media="photo"] .media-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-panel {
+          max-height: 94vh;
+        }
+
+        .modal-head {
+          align-items: flex-start;
+        }
+
+        .modal-body {
+          grid-template-columns: 1fr;
+        }
+
+        .modal-media img,
+        .modal-media video {
+          max-height: 62vh;
+        }
+      }
+    </style>
+  </head>
+  <body data-mode="compare" data-media="all">
+    <header class="hero" id="top">
+      <div class="shell">
+        <div class="topbar">
+          <a class="brand" href="#top" aria-label="HomeReel preset review">
+            <span class="brand-mark">HR</span>
+            <span class="brand-text">
+              <span class="brand-name">HomeReel</span>
+              <span class="brand-sub">Preset approval</span>
+            </span>
+          </a>
+          <div class="meta-line" aria-label="Review metadata">
+            <span class="chip">2026-06-10</span>
+            <span class="chip">Personal + Classic + Modern</span>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1>Preset review board</h1>
+          <p>
+            Same preset, three source packs. Video before/after and photo before/after stay in one visual row,
+            so weak looks have nowhere to hide.
+          </p>
+        </div>
+
+        <div class="stats" aria-label="Preset review summary">
+          <div class="stat">
+            <strong id="presetCount">23</strong>
+            <span>presets</span>
+          </div>
+          <div class="stat">
+            <strong id="sourceCount">3</strong>
+            <span>source versions</span>
+          </div>
+          <div class="stat">
+            <strong id="mediaCount">276</strong>
+            <span>media checks</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="controls-wrap">
+      <div class="shell">
+        <div class="controls" aria-label="Review controls">
+          <div class="segmented" role="tablist" aria-label="Version view">
+            <button class="tab is-active" type="button" data-mode-control="compare">Compare all</button>
+            <button class="tab" type="button" data-mode-control="personal">Version 1</button>
+            <button class="tab" type="button" data-mode-control="classic">Version 2</button>
+            <button class="tab" type="button" data-mode-control="modern">Version 3</button>
+          </div>
+
+          <div class="segmented" data-compact role="tablist" aria-label="Media filter">
+            <button class="tab is-active" type="button" data-media-control="all">Video + photo</button>
+            <button class="tab" type="button" data-media-control="video">Video</button>
+            <button class="tab" type="button" data-media-control="photo">Photo</button>
+          </div>
+
+          <label>
+            <span class="visually-hidden">Search presets</span>
+            <input class="search" id="searchInput" type="search" placeholder="Search preset..." autocomplete="off" />
+          </label>
+        </div>
+        <nav class="quick-nav" id="quickNav" aria-label="Preset shortcuts"></nav>
+      </div>
+    </div>
+
+    <main class="shell">
+      <div class="preset-list" id="presetList"></div>
+      <section class="empty" id="emptyState" aria-live="polite">
+        <h2>No match</h2>
+        <p>Search is filtering by preset name, family, tier, and client description.</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-inner">
+        <div>
+          <strong>HomeReel</strong>
+          <span>Client approval pack · static HTML</span>
+        </div>
+        <a class="to-top" href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <div class="review-modal" id="reviewModal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <section class="modal-panel">
+        <header class="modal-head">
+          <div class="modal-title">
+            <strong id="modalTitle">Preview</strong>
+            <span id="modalMeta">Before / after</span>
+          </div>
+          <button class="modal-close" type="button" data-modal-close>Close</button>
+        </header>
+        <div class="modal-body" id="modalBody"></div>
+      </section>
+    </div>
+
+    <script>
+      const PACKS = [
+        {
+          id: "personal",
+          label: "Version 1",
+          root: "home-reel-presets-personal-2026-06-12",
+        },
+        {
+          id: "classic",
+          label: "Version 2",
+          root: "home-reel-presets-2026-06-10",
+        },
+        {
+          id: "modern",
+          label: "Version 3",
+          root: "home-reel-presets-modern-2026-06-10",
+        },
+      ];
+
+      const PRESETS = [
+        ["01-vhs85", "vhs85", "VHS '85", "Archive Tape", "core", "The most nostalgic tape look. Stronger noise, softer edges, warm family-video decay."],
+        ["02-cam92", "cam92", "Cam '92", "Archive Tape", "core", "Balanced camcorder look for most family clips. Warm without looking broken."],
+        ["03-boot98", "boot98", "Boot '98", "Damaged Tape", "core", "A rougher tape look for clips that should feel found, copied, and imperfect."],
+        ["04-hi8_96", "hi8_96", "Hi8 '96", "Archive Tape", "candidate", "A sharper 90s archive preset for cleaner-looking source videos."],
+        ["05-minidv03", "minidv03", "MiniDV '03", "Digital Nostalgia", "candidate", "Less antique, more early-2000s home video. Useful for newer source clips."],
+        ["06-super8_74", "super8_74", "Super 8 '74", "Film", "candidate", "A soft film-family look for moments that should feel older than VHS."],
+        ["07-kodak_home89", "kodak_home89", "Kodak Home '89", "Film Photo", "candidate", "A clean photo-friendly nostalgic look. Works well on stills and bright videos."],
+        ["08-polaroid82", "polaroid82", "Polaroid '82", "Film Photo", "candidate", "A gentler still-photo look for family portraits and quiet scenes."],
+        ["09-faded_album", "faded_album", "Faded Album", "Soft Memory", "candidate", "A safe universal look when heavy tape effects would be too much."],
+        ["10-golden_hour", "golden_hour", "Golden Hour", "Soft Memory", "candidate", "The most commercial and safe warm look. Good for ads and broad appeal."],
+        ["11-dusty_attic", "dusty_attic", "Dusty Attic", "Soft Memory", "candidate", "A moodier family-archive preset without going full horror tape."],
+        ["12-late_night_cable", "late_night_cable", "Late Night Cable", "Damaged Tape", "candidate", "A stylized option for dramatic clips and stronger analog character."],
+        ["13-snow_track", "snow_track", "Snow Track", "Damaged Tape", "candidate", "The most visibly damaged preset. Good as a spicy option, not default."],
+        ["14-basement_tape", "basement_tape", "Basement Tape", "Damaged Tape", "candidate", "A gritty preserved-memory look for imperfect old footage."],
+        ["15-school_rec00", "school_rec00", "School Rec '00", "Digital Nostalgia", "candidate", "A school-event look for early digital childhood footage."],
+        ["16-wedding_tape95", "wedding_tape95", "Wedding Tape '95", "Archive Tape", "candidate", "Useful for ceremonies, family parties, and indoor home videos."],
+        ["17-summer_camp91", "summer_camp91", "Summer Camp '91", "Soft Memory", "candidate", "A bright family-trip look that keeps footage cheerful."],
+        ["18-holiday_cam89", "holiday_cam89", "Holiday Cam '89", "Archive Tape", "candidate", "Good for holiday clips, birthdays, and indoor family scenes."],
+        ["19-family_print95", "family_print95", "Family Print '95", "Film Photo", "candidate", "Photo-first preset for album scans and still-image uploads."],
+        ["20-archive_clean", "archive_clean", "Archive Clean", "Utility", "candidate", "For users who want nostalgia without obvious damage."],
+        ["21-sepia_reel", "sepia_reel", "Sepia Reel", "Film", "candidate", "A classic warm old-memory look. Useful, but easy to overuse."],
+        ["22-dream_soft", "dream_soft", "Dream Soft", "Soft Memory", "candidate", "Commercially safe preset for family, kids, and emotional ads."],
+        ["23-cold_archive", "cold_archive", "Cold Archive", "Utility", "candidate", "A cooler alternative when warm presets make footage too orange."],
+      ].map(([folder, id, name, family, tier, description], index) => ({
+        folder,
+        id,
+        name,
+        family,
+        tier,
+        description,
+        index: index + 1,
+      }));
+
+      const mediaItems = [
+        ["video", "before", "Video", "Before", "mp4"],
+        ["video", "after", "Video", "After", "mp4"],
+        ["photo", "before", "Photo", "Before", "jpg"],
+        ["photo", "after", "Photo", "After", "jpg"],
+      ];
+
+      const presetList = document.querySelector("#presetList");
+      const quickNav = document.querySelector("#quickNav");
+      const emptyState = document.querySelector("#emptyState");
+      const searchInput = document.querySelector("#searchInput");
+      const reviewModal = document.querySelector("#reviewModal");
+      const modalTitle = document.querySelector("#modalTitle");
+      const modalMeta = document.querySelector("#modalMeta");
+      const modalBody = document.querySelector("#modalBody");
+
+      function escapeAttr(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;");
+      }
+
+      function mediaPath(pack, preset, type, state, ext) {
+        return `${pack.root}/${preset.folder}/${type}/${state}.${ext}`;
+      }
+
+      function findPack(packId) {
+        return PACKS.find((pack) => pack.id === packId);
+      }
+
+      function findPresetById(presetId) {
+        return PRESETS.find((preset) => preset.id === presetId);
+      }
+
+      function renderModalItem({ pack, preset, kind, state }) {
+        const ext = kind === "video" ? "mp4" : "jpg";
+        const src = mediaPath(pack, preset, kind, state, ext);
+        const label = state === "before" ? "Before" : "After";
+        const alt = `${preset.name} ${pack.label} ${kind} ${label.toLowerCase()}`;
+        const media =
+          kind === "video"
+            ? `<video controls playsinline preload="metadata" src="${escapeAttr(src)}" aria-label="${escapeAttr(alt)}"></video>`
+            : `<img loading="eager" decoding="async" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" />`;
+
+        return `
+          <article class="modal-item">
+            <header class="modal-item-head">
+              <strong>${label}</strong>
+              <a class="file-button" href="${escapeAttr(src)}" target="_blank" rel="noopener">Open file</a>
+            </header>
+            <div class="modal-media">
+              ${media}
+            </div>
+          </article>
+        `;
+      }
+
+      function openPair({ packId, presetId, kind }) {
+        const pack = findPack(packId);
+        const preset = findPresetById(presetId);
+        if (!pack || !preset) return;
+
+        modalTitle.textContent = `${preset.name} · ${pack.label}`;
+        modalMeta.textContent = `${kind} before / after · ${pack.root}`;
+        modalBody.innerHTML = ["before", "after"]
+          .map((state) => renderModalItem({ pack, preset, kind, state }))
+          .join("");
+        reviewModal.hidden = false;
+        document.body.style.overflow = "hidden";
+        reviewModal.querySelector("[data-modal-close]")?.focus();
+      }
+
+      function closeModal() {
+        modalBody.querySelectorAll("video").forEach((video) => {
+          video.pause();
+          video.removeAttribute("src");
+          video.load();
+        });
+        modalBody.innerHTML = "";
+        reviewModal.hidden = true;
+        document.body.style.overflow = "";
+      }
+
+      function renderMedia(pack, preset) {
+        return mediaItems
+          .map(([type, state, typeLabel, stateLabel, ext]) => {
+            const src = mediaPath(pack, preset, type, state, ext);
+            const alt = `${preset.name} ${pack.label} ${typeLabel.toLowerCase()} ${stateLabel.toLowerCase()}`;
+            const element =
+              type === "video"
+                ? `<video controls muted playsinline preload="metadata" src="${escapeAttr(src)}" aria-label="${escapeAttr(alt)}"></video>`
+                : `<img loading="eager" decoding="async" src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" />`;
+
+            return `
+              <figure class="media-card" data-kind="${type}">
+                <figcaption class="media-label">
+                  <strong>${typeLabel}</strong>
+                  <span>${stateLabel}</span>
+                </figcaption>
+                <div class="media-shell">${element}</div>
+              </figure>
+            `;
+          })
+          .join("");
+      }
+
+      function renderVersion(pack, preset) {
+        return `
+          <section class="version" data-pack="${pack.id}">
+            <div class="version-head">
+              <div class="version-meta">
+                <strong class="version-name">${pack.label}</strong>
+                <span class="version-root">${pack.root}</span>
+              </div>
+              <div class="version-actions">
+                <button class="pair-button" type="button" data-open-pair data-pack="${pack.id}" data-preset="${preset.id}" data-kind="video">Open video pair</button>
+                <button class="pair-button" type="button" data-open-pair data-pack="${pack.id}" data-preset="${preset.id}" data-kind="photo">Open photo pair</button>
+              </div>
+            </div>
+            <div class="version-body">
+              <div class="media-grid">
+                ${renderMedia(pack, preset)}
+              </div>
+            </div>
+          </section>
+        `;
+      }
+
+      function renderPreset(preset) {
+        const number = String(preset.index).padStart(2, "0");
+
+        return `
+          <article class="preset" id="${preset.id}" data-search="${escapeAttr(
+            `${preset.name} ${preset.family} ${preset.tier} ${preset.description}`.toLowerCase()
+          )}">
+            <header class="preset-head">
+              <div>
+                <div class="preset-title">
+                  <h2>${preset.name}</h2>
+                </div>
+                <div class="meta-line">
+                  <span class="chip">${preset.family}</span>
+                  <span class="chip" data-tier="${preset.tier}">${preset.tier}</span>
+                  <span class="chip">${preset.id}</span>
+                </div>
+                <p class="preset-desc">${preset.description}</p>
+              </div>
+              <div class="preset-index">${number}</div>
+            </header>
+            <div class="comparison">
+              ${PACKS.map((pack) => renderVersion(pack, preset)).join("")}
+            </div>
+          </article>
+        `;
+      }
+
+      function render() {
+        presetList.innerHTML = PRESETS.map(renderPreset).join("");
+        quickNav.innerHTML = PRESETS.map(
+          (preset) => `<a class="quick-link" href="#${preset.id}">${preset.name}</a>`
+        ).join("");
+        document.querySelector("#presetCount").textContent = PRESETS.length;
+        document.querySelector("#sourceCount").textContent = PACKS.length;
+        document.querySelector("#mediaCount").textContent = PRESETS.length * PACKS.length * mediaItems.length;
+      }
+
+      function setActiveButton(selector, value, attr) {
+        document.querySelectorAll(selector).forEach((button) => {
+          button.classList.toggle("is-active", button.getAttribute(attr) === value);
+        });
+      }
+
+      function applySearch() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visible = 0;
+
+        document.querySelectorAll(".preset").forEach((preset) => {
+          const match = !query || preset.dataset.search.includes(query);
+          preset.hidden = !match;
+          if (match) visible += 1;
+        });
+
+        emptyState.style.display = visible ? "none" : "block";
+      }
+
+      document.addEventListener("click", (event) => {
+        const modeButton = event.target.closest("[data-mode-control]");
+        const mediaButton = event.target.closest("[data-media-control]");
+        const pairButton = event.target.closest("[data-open-pair]");
+        const modalClose = event.target.closest("[data-modal-close]");
+
+        if (modeButton) {
+          const mode = modeButton.dataset.modeControl;
+          document.body.dataset.mode = mode;
+          setActiveButton("[data-mode-control]", mode, "data-mode-control");
+        }
+
+        if (mediaButton) {
+          const media = mediaButton.dataset.mediaControl;
+          document.body.dataset.media = media;
+          setActiveButton("[data-media-control]", media, "data-media-control");
+        }
+
+        if (pairButton) {
+          openPair({
+            packId: pairButton.dataset.pack,
+            presetId: pairButton.dataset.preset,
+            kind: pairButton.dataset.kind,
+          });
+        }
+
+        if (modalClose || event.target === reviewModal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !reviewModal.hidden) {
+          closeModal();
+        }
+      });
+
+      searchInput.addEventListener("input", applySearch);
+
+      render();
+    </script>
+  </body>
+</html>
